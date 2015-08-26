@@ -1,16 +1,20 @@
 {
   "name": "formattic",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "cli to format the web things",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"nope\" && exit 0"
   },
   "bin": {
     "formattic": "./bin/formattic"
   },
-  "author": "",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/web-mech/formattic.git"
+  },
+  "author": "webmech",
+  "license": "MIT",
   "dependencies": {
     "js-beautify": "^1.5.10",
     "q": "^1.4.1",
