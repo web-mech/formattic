@@ -8,7 +8,7 @@ process.bin = process.title = 'formattic';
 
 program
   .version(pkg.version)
-  .option('-p, --path [path]', 'input directory', false)
+  .option('-p, --path [path]', 'input directory', './')
   .option('-f, --filter [filter]', 'type of files to format', '*.js|*.css|*.html');
 
 
