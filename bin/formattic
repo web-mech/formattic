@@ -1,0 +1,22 @@
+#!/usr/bin/env node
+
+var program = require('commander'),
+  pkg = require('../package.json'),
+  formaattic = require('../index');
+
+process.bin = process.title = 'formattic';
+
+program
+  .version(pkg.version)
+  .option('-p, --path [path]', 'input directory', false)
+  .option('-f, --filter [filter]', 'type of files to format', '*.js|*.css|*.html');
+
+
+program.parse(process.argv);
+
+formaattic(program.path, program.filter).then(function() {
+  console.log('formatting complete :-)');
+});
+
+
+

@@ -1,0 +1,19 @@
+{
+  "name": "formattic",
+  "version": "0.0.0",
+  "description": "cli to format the web things",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "formattic": "./bin/formattic"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "js-beautify": "^1.5.10",
+    "q": "^1.4.1",
+    "commander": "^2.8.1"
+  }
+}
