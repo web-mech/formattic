@@ -2,21 +2,30 @@
 
 var program = require('commander'),
   pkg = require('../package.json'),
-  formaattic = require('../index');
+  watch = require('node-watch'),
+  formattic = require('../index');
 
 process.bin = process.title = 'formattic';
 
 program
   .version(pkg.version)
   .option('-p, --path [path]', 'input directory', './')
-  .option('-f, --filter [filter]', 'type of files to format', '*.js|*.css|*.html');
+  .option('-f, --filter [filter]', 'type of files to format', '*.js|*.css|*.html')
+  .option('-s, --standardize', 'standardize code', false)
+  .option('-w, --watch', 'watch and auto-format code', false);
 
 
 program.parse(process.argv);
 
-formaattic(program.path, program.filter).then(function() {
-  console.log('formatting complete :-)');
-});
+if (program.watch) {
+  watch(program.path, function(file) {
+    formattic(file, program.filter);
+  });
+} else {
+  formattic(program.path, program.filter);
+}
+
+
 
 
 
